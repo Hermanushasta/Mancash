@@ -18,7 +18,7 @@ class AnggotaController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $members = DB::table('anggota')
+            $members = DB::table('anggotas')
                 ->select(
                     'id as id',
                     'nama as nama',
@@ -37,14 +37,14 @@ class AnggotaController extends Controller
                 ->get();
 
             return DataTables::of($members)
-                ->addColumn(
-                    'action',
-                    function ($members) {
-                        $html =
-                            '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
-                        return $html;
-                    }
-                )
+                // ->addColumn(
+                //     'action',
+                //     function ($members) {
+                //         $html =
+                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                //         return $html;
+                //     }
+                // )
                 ->make(true);
         }
 
@@ -69,7 +69,7 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate(
+        $validated = $request->validate(
             [
                 'nama' => ['required', 'string', 'max:200'],
                 'nim' => ['required', 'string', 'max:10'],
@@ -77,7 +77,7 @@ class AnggotaController extends Controller
                 'no_telepon' => ['required', 'string', 'max:13']
             ]
         );
-        anggota::create($validate);
+        Anggota::create($validated);
         return redirect('anggota');
     }
 

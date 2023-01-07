@@ -3,10 +3,44 @@
     <div class="sidebar-header flex items-center justify-center py-4">
         <div class="inline-flex">
             <a href="#" class="inline-flex flex-row items-center">
-                <svg class="w-10 h-10 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M11.757 2.034a1 1 0 01.638.519c.483.967.844 1.554 1.207 2.03.368.482.756.876 1.348 1.467A6.985 6.985 0 0117 11a7.002 7.002 0 01-14 0c0-1.79.684-3.583 2.05-4.95a1 1 0 011.707.707c0 1.12.07 1.973.398 2.654.18.374.461.74.945 1.067.116-1.061.328-2.354.614-3.58.225-.966.505-1.93.839-2.734.167-.403.356-.785.57-1.116.208-.322.476-.649.822-.88a1 1 0 01.812-.134zm.364 13.087A2.998 2.998 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879.586.585.879 1.353.879 2.121s-.293 1.536-.879 2.121z"
-                        clip-rule="evenodd" />
+                <svg height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve">
+                    <circle style="fill:#CFF09E;" cx="367.369" cy="161.604" r="84.828" />
+                    <g>
+                        <path style="fill:#507C5C;"
+                            d="M367.367,260.348c-26.374,0-51.169-10.271-69.818-28.919c-5.429-5.429-5.429-14.233,0-19.664
+		c5.431-5.428,14.232-5.428,19.664,0c27.656,27.656,72.653,27.656,100.31,0c13.398-13.396,20.774-31.207,20.774-50.154
+		s-7.377-36.759-20.774-50.154c-27.656-27.656-72.653-27.656-100.31,0c-5.431,5.428-14.232,5.428-19.664,0
+		c-5.429-5.429-5.429-14.233,0-19.664c18.649-18.648,43.444-28.919,69.818-28.919s51.169,10.271,69.818,28.919
+		c18.648,18.649,28.919,43.444,28.919,69.818s-10.271,51.169-28.919,69.818C418.537,250.077,393.742,260.348,367.367,260.348z" />
+                        <path style="fill:#507C5C;"
+                            d="M374.166,155.225v-24.161c9.644,1.691,11.094,7.037,11.312,10.18
+		c0.056,0.805,0.72,1.428,1.528,1.428h10.534c0.884,0,1.581-0.748,1.535-1.632c-0.684-13.252-9.766-21.778-24.909-23.692v-8.125
+		c0-0.847-0.687-1.534-1.534-1.534h-10.532c-0.847,0-1.534,0.687-1.534,1.534v8.125c-15.754,1.992-24.951,11.141-24.951,25.325
+		s9.195,23.332,24.951,25.325v24.161c-9.644-1.691-11.094-7.037-11.312-10.18c-0.056-0.805-0.72-1.428-1.528-1.428h-10.534
+		c-0.884,0-1.581,0.748-1.535,1.632c0.684,13.252,9.766,21.778,24.909,23.692v8.125c0,0.847,0.687,1.534,1.534,1.534h10.532
+		c0.847,0,1.534-0.687,1.534-1.534v-8.125c15.754-1.992,24.951-11.141,24.951-25.325
+		C399.117,166.366,389.922,157.216,374.166,155.225z M360.567,154.28c-11.348-1.99-11.351-9.04-11.351-11.608
+		c0-2.567,0.003-9.619,11.351-11.608V154.28z M374.166,192.157v-23.217c11.348,1.99,11.351,9.042,11.351,11.608
+		S385.515,190.168,374.166,192.157z" />
+                    </g>
+                    <path style="fill:#CFF09E;"
+                        d="M60.539,186.447c25.596,0,46.346,20.75,46.346,46.346s-20.749,46.346-46.346,46.346
+	c-25.596,0-46.346-20.75-46.346-46.346S34.943,186.447,60.539,186.447H13.904v248.771h93.272V186.447H60.539z" />
+                    <path style="fill:#507C5C;"
+                        d="M461.604,328.968H338.148c0.214-1.806,0.335-3.632,0.335-5.478c0-12.394-4.884-24.036-13.816-32.844
+	L242.851,211c-12.753-12.372-29.611-19.186-47.472-19.186h-74.302v-5.366c0-7.678-6.226-13.904-13.904-13.904H13.904
+	C6.226,172.545,0,178.771,0,186.449v248.773c0,7.678,6.226,13.904,13.904,13.904h93.27c7.678,0,13.904-6.226,13.904-13.904v-6.471
+	l178.819-0.031c7.678-0.001,13.902-6.228,13.901-13.907c-0.001-7.678-6.228-13.902-13.907-13.901l-178.814,0.031V219.622h74.302
+	c10.591,0,20.574,4.027,28.09,11.319l81.735,79.568c3.527,3.479,5.47,8.088,5.47,12.982c0,4.894-1.941,9.503-5.475,12.988
+	l-0.1,0.099c-7.412,7.309-19.471,7.308-26.88,0l-86.29-85.096c-5.467-5.393-14.272-5.332-19.663,0.138
+	c-5.392,5.468-5.331,14.271,0.138,19.663l58.498,57.689H175.61c-7.678,0-13.904,6.226-13.904,13.904s6.226,13.904,13.904,13.904
+	h81.735c0.563,0,1.114-0.043,1.659-0.108c9.05,8.762,20.848,13.152,32.653,13.15c11.761,0,23.52-4.36,32.559-13.061
+	c0.122,0.003,0.241,0.018,0.363,0.018h137.023c12.455,0,22.588,9.907,22.588,22.085c0,12.177-10.133,22.084-22.588,22.084h-96.172
+	c-7.678,0-13.904,6.226-13.904,13.904c0,7.678,6.226,13.904,13.904,13.904h96.172c27.788,0,50.396-22.381,50.396-49.891
+	C511.999,351.352,489.392,328.968,461.604,328.968z M60.539,200.351c17.887,0,32.441,14.553,32.441,32.442
+	c0,17.887-14.553,32.441-32.441,32.441c-17.889,0-32.442-14.553-32.442-32.441C28.097,214.904,42.65,200.351,60.539,200.351z
+	 M93.27,421.316H27.808V283.354c9.43,6.126,20.672,9.687,32.731,9.687s23.302-3.562,32.731-9.687V421.316z" />
                 </svg>
                 <span class="leading-10 text-gray-100 text-2xl font-bold ml-1 uppercase">Mancash</span>
             </a>
@@ -15,7 +49,8 @@
     <div class="sidebar-content px-4 py-6">
         <ul class="flex flex-col w-full">
             <li class="my-px">
-                <a href="#" class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-700 bg-gray-100">
+                <a href="{{ route('dashboard') }}"
+                    class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-700 bg-gray-100">
                     <span class="flex items-center justify-center text-lg text-gray-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
@@ -30,7 +65,7 @@
                 <span class="flex font-medium text-sm text-gray-300 px-2 my-2 uppercase">Manajemen Anggota</span>
             </li>
             <li class="my-px">
-                <a-link :href="route('tambahAnggota')"
+                <a href="{{ route('tambahAnggota') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-green-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,11 +74,11 @@
                         </svg>
                     </span>
                     <span class="ml-3">Tambah Anggota</span>
-                </a-link>
+                </a>
 
             </li>
             <li class="my-px">
-                <a href="#"
+                <a href="{{ route('anggotaView') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-gray-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,7 +99,7 @@
                 <span class="flex font-medium text-sm text-gray-300 px-2 my-2 uppercase">Manajemen Keuangan</span>
             </li>
             <li class="my-px">
-                <a href="#"
+                <a href="{{ route('tambahPemasukan') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-gray-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -76,7 +111,7 @@
                 </a>
             </li>
             <li class="my-px">
-                <a href="#"
+                <a href="{{ route('pemasukanView') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-gray-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -91,7 +126,7 @@
                 </a>
             </li>
             <li class="my-px">
-                <a href="#"
+                <a href="{{ route('tambahPengeluaran') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-gray-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -105,7 +140,7 @@
                 </a>
             </li>
             <li class="my-px">
-                <a href="#"
+                <a href="{{ route('pengeluaranView') }}"
                     class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                     <span class="flex items-center justify-center text-lg text-red-400">
                         <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -42,15 +42,15 @@ Route::post('anggotaStore', [AnggotaController::class, 'store'])->name('anggotaS
 Route::get('anggotaView', [AnggotaController::class, 'show'])->name('anggotaView');
 
 //Pemasukan
-Route::get('pemasukan', [PemasukanController::class, 'index'])->name('anggota');
-Route::get('tambahPemasukan', [PemasukanController::class, 'create'])->name('tambahAnggota');
-Route::post('pemasukanStore/{pemasukan}', [PemasukanController::class, 'store'])->name('anggotaStore');
-Route::get('pemasukanView', [PemasukanController::class, 'show'])->name('anggotaView');
+Route::get('pemasukan', [PemasukanController::class, 'index'])->name('pemasukan');
+Route::get('tambahPemasukan', [PemasukanController::class, 'create'])->name('tambahPemasukan');
+Route::post('pemasukanStore', [PemasukanController::class, 'store'])->name('pemasukanStore');
+Route::get('pemasukanView', [PemasukanController::class, 'show'])->name('pemasukanView');
 
 //Pengeluaran
 Route::get('pengeluaran', [PengeluaranController::class, 'index'])->name('pengeluaran');
 Route::get('tambahPengeluaran', [PengeluaranController::class, 'create'])->name('tambahPengeluaran');
-Route::post('pengeluaranStore/{pengeluaran}', [PengeluaranController::class, 'store'])->name('pengeluaranStore');
+Route::post('pengeluaranStore', [PengeluaranController::class, 'store'])->name('pengeluaranStore');
 Route::get('pengeluaranView', [PengeluaranController::class, 'show'])->name('pengeluaranView');
 
 require __DIR__ . '/auth.php';

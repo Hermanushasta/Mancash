@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengeluaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
 
 class PengeluaranController extends Controller
 {
@@ -12,9 +14,39 @@ class PengeluaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $outcome = DB::table('pengeluaran')
+                ->select(
+                    'id as id',
+                    'nama_pengeluaran as nama_pengeluaran',
+                    // DB::raw('
+                    //     (CASE
+                    //     WHEN jenisKoleksi="1" THEN "Buku"
+                    //     WHEN jenisKoleksi="2" THEN "Majalah"
+                    //     WHEN jenisKoleksi="3" THEN "Cakram Digital"
+                    //     END) AS jenis
+                    // '),
+                    'jumlah as jumlah',
+                    'tanggal_keluar as tanggal_keluar'
+                )
+                ->orderBy('tanggal_keluar', 'asc')
+                ->get();
+
+            return DataTables::of($outcome)
+                // ->addColumn(
+                //     'action',
+                //     function ($members) {
+                //         $html =
+                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                //         return $html;
+                //     }
+                // )
+                ->make(true);
+        }
+
+        return view('pengeluaran.daftarPengeluaran');
     }
 
     /**
@@ -24,7 +56,7 @@ class PengeluaranController extends Controller
      */
     public function create()
     {
-        //
+        return view('pengeluaran.catatPengeluaran');
     }
 
     /**
@@ -35,7 +67,15 @@ class PengeluaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate(
+            [
+                'nama_pengeluaran' => ['required', 'string', 'max:200'],
+                'jumlah' => ['required', 'string', 'max:12'],
+                'tanggal_keluar' => ['required']
+            ]
+        );
+        Pengeluaran::create($validated);
+        return redirect('pengeluaran');
     }
 
     /**
@@ -46,7 +86,7 @@ class PengeluaranController extends Controller
      */
     public function show(Pengeluaran $pengeluaran)
     {
-        //
+        return view('pengeluaran.daftarPengeluaran', compact('pengeluaran'));
     }
 
     /**

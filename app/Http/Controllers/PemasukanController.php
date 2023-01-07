@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pemasukan;
+use App\Models\Anggota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
+
 
 class PemasukanController extends Controller
 {
@@ -12,9 +16,39 @@ class PemasukanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $incomes = DB::table('pemasukans')
+                ->select(
+                    'id as id',
+                    'nama as nama',
+                    // DB::raw('
+                    //     (CASE
+                    //     WHEN jenisKoleksi="1" THEN "Buku"
+                    //     WHEN jenisKoleksi="2" THEN "Majalah"
+                    //     WHEN jenisKoleksi="3" THEN "Cakram Digital"
+                    //     END) AS jenis
+                    // '),
+                    'jumlah as jumlah',
+                    'created_at as created_at'
+                )
+                ->orderBy('created_at', 'asc')
+                ->get();
+
+            return DataTables::of($incomes)
+                // ->addColumn(
+                //     'action',
+                //     function ($members) {
+                //         $html =
+                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                //         return $html;
+                //     }
+                // )
+                ->make(true);
+        }
+
+        return view('pemasukan.daftarKas');
     }
 
     /**
@@ -24,7 +58,9 @@ class PemasukanController extends Controller
      */
     public function create()
     {
-        //
+        $users = Anggota::get();
+        $incomes = Pemasukan::get();
+        return view('pemasukan.setorKas', compact('incomes', 'users'));
     }
 
     /**
@@ -35,7 +71,15 @@ class PemasukanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate(
+            [
+                'nama' => ['required', 'string', 'max:200'],
+                'jumlah' => ['required', 'string', 'max:12'],
+                'created_at' => ['required', 'date']
+            ]
+        );
+        Pemasukan::create($validated);
+        return redirect('pemasukan');
     }
 
     /**
@@ -46,7 +90,7 @@ class PemasukanController extends Controller
      */
     public function show(Pemasukan $pemasukan)
     {
-        //
+        return view('pemasukan.daftarKas', compact('pemasukan'));
     }
 
     /**
