@@ -78,7 +78,7 @@ class AnggotaController extends Controller
             ]
         );
         Anggota::create($validated);
-        return redirect('anggota');
+        return redirect('anggota')->withSuccess('Task Created Successfully!');
     }
 
     /**

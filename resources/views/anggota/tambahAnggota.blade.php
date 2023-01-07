@@ -45,5 +45,8 @@
                 </div>
             </div>
         </div>
+        @include('sweetalert::alert')
     </div>
+
+
 </x-app-layout>
