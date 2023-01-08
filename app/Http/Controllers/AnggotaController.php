@@ -9,7 +9,7 @@ use Yajra\DataTables\Facades\DataTables;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
-class pAnggotaController extends Controller
+class AnggotaController extends Controller
 {
     /**
      * Display a listing of the resource.
