@@ -6,9 +6,10 @@ use App\Models\Anggota;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
-class AnggotaController extends Controller
+class pAnggotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -78,7 +79,8 @@ class AnggotaController extends Controller
             ]
         );
         Anggota::create($validated);
-        return redirect('anggota')->withSuccess('Task Created Successfully!');
+        // Alert::success('Success Title', 'Success Message');
+        return redirect('anggota');
     }
 
     /**

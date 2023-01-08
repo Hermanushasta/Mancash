@@ -19,8 +19,8 @@
                             name: 'jumlah'
                         },
                         {
-                            data: 'tanggal_keluar',
-                            name: 'tanggal_keluar'
+                            data: 'created_at',
+                            name: 'created_at'
                         },
                         // {
                         //     data: 'action',

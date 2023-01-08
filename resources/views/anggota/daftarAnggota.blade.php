@@ -2,7 +2,7 @@
     @push('script')
         <script>
             $(function() {
-                $('#myDatatable').DataTable({
+                $('#myDataTable').DataTable({
                     ajax: '{{ url('anggota') }}',
                     serverSide: true,
                     processing: true,
@@ -47,7 +47,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 raw form-inline">
-                    <table class=" table table-striped table-hover" id="myDatatable" name="myDatatable">
+                    <table class=" table table-striped table-hover" id="myDataTable" name="myDataTable">
                         <thead>
                             <h1 class="font-extrabold alignz">Daftar Anggota : </h1>
                             <br>

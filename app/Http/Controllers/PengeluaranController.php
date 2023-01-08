@@ -17,7 +17,7 @@ class PengeluaranController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $outcome = DB::table('pengeluaran')
+            $outcome = DB::table('pengeluarans')
                 ->select(
                     'id as id',
                     'nama_pengeluaran as nama_pengeluaran',
@@ -29,9 +29,9 @@ class PengeluaranController extends Controller
                     //     END) AS jenis
                     // '),
                     'jumlah as jumlah',
-                    'tanggal_keluar as tanggal_keluar'
+                    'created_at as created_at'
                 )
-                ->orderBy('tanggal_keluar', 'asc')
+                ->orderBy('created_at', 'asc')
                 ->get();
 
             return DataTables::of($outcome)
@@ -70,8 +70,7 @@ class PengeluaranController extends Controller
         $validated = $request->validate(
             [
                 'nama_pengeluaran' => ['required', 'string', 'max:200'],
-                'jumlah' => ['required', 'string', 'max:12'],
-                'tanggal_keluar' => ['required']
+                'jumlah' => ['required', 'integer', 'max:11'],
             ]
         );
         Pengeluaran::create($validated);
