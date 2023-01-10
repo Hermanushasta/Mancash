@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -127,6 +128,6 @@ class AnggotaController extends Controller
     public function destroy(Anggota $id)
     {
         $id->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

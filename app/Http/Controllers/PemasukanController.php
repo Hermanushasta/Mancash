@@ -23,15 +23,9 @@ class PemasukanController extends Controller
                 ->select(
                     'id as id',
                     'nama as nama',
-                    // DB::raw('
-                    //     (CASE
-                    //     WHEN jenisKoleksi="1" THEN "Buku"
-                    //     WHEN jenisKoleksi="2" THEN "Majalah"
-                    //     WHEN jenisKoleksi="3" THEN "Cakram Digital"
-                    //     END) AS jenis
-                    // '),
                     'jumlah as jumlah',
-                    'created_at as created_at'
+                    'created_at as created_at',
+                    'updated_at as updated_at'
                 )
                 ->orderBy('created_at', 'asc')
                 ->get();
@@ -40,12 +34,12 @@ class PemasukanController extends Controller
                 ->addColumn(
                     'action',
                     function ($members) {
-                        $html =
-                            '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
-                        '<a href="' . ('pemasukanDelete') . "/" . $members->id . '">Edit</a>';
+                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
+                        $html .= '<a href="' . ('/pemasukanDelete') . "/" . $members->id . '">Hapus</a>';
                         return $html;
                     }
                 )
+                ->rawColumns(['action'])
                 ->make(true);
         }
 
@@ -80,7 +74,7 @@ class PemasukanController extends Controller
             ]
         );
         Pemasukan::create($validated);
-        return redirect('pemasukan');
+        return redirect('pemasukan')->with('success', 'Data berhasil dimasukkan');
     }
 
     /**
@@ -123,8 +117,9 @@ class PemasukanController extends Controller
      * @param  \App\Models\Pemasukan  $pemasukan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pemasukan $pemasukan)
+    public function destroy(Pemasukan $id)
     {
-        //
+        $id->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

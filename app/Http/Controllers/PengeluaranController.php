@@ -21,13 +21,6 @@ class PengeluaranController extends Controller
                 ->select(
                     'id as id',
                     'nama_pengeluaran as nama_pengeluaran',
-                    // DB::raw('
-                    //     (CASE
-                    //     WHEN jenisKoleksi="1" THEN "Buku"
-                    //     WHEN jenisKoleksi="2" THEN "Majalah"
-                    //     WHEN jenisKoleksi="3" THEN "Cakram Digital"
-                    //     END) AS jenis
-                    // '),
                     'jumlah as jumlah',
                     'created_at as created_at',
                     'updated_at as updated_at'
@@ -39,11 +32,12 @@ class PengeluaranController extends Controller
                 ->addColumn(
                     'action',
                     function ($members) {
-                        $html =
-                            '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
+                        $html .= '<a href="' . ('/pengeluaranDelete') . "/" . $members->id . '"> Hapus</a>';
                         return $html;
                     }
                 )
+                ->rawColumns(['action'])
                 ->make(true);
         }
 
@@ -75,7 +69,7 @@ class PengeluaranController extends Controller
             ]
         );
         Pengeluaran::create($validated);
-        return redirect('pengeluaran');
+        return redirect('pengeluaran')->with('success', 'Data Berhasil dimasukkan');
     }
 
     /**
@@ -118,8 +112,9 @@ class PengeluaranController extends Controller
      * @param  \App\Models\Pengeluaran  $pengeluaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengeluaran $pengeluaran)
+    public function destroy(Pengeluaran $id)
     {
-        //
+        $id->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

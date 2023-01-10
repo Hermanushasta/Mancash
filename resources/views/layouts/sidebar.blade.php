@@ -103,7 +103,7 @@
         </ul>
         <x-btnactive :href="route('tambahPemasukan')" :active="request()->routeIs('tambahPemasukan')">
             <span class="flex items-center justify-center text-lg text-black-400">
-                <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1"
+                <svg fill="#000000" height="24px" width="24px" version="1.1" id="Layer_1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"
                     enable-background="new 0 0 64 64" xml:space="preserve">
                     <g id="Profit">
