@@ -37,10 +37,13 @@
                                 :value="old('no_telepon')" required autofocus />
                             <x-input-error :messages="$errors->get('no_telepon')" class="mt-2" />
                         </div>
-                        <button type="submit", name="ButtonSubmit", id="ButtonSubmit"
-                            class="btn btn-outline-primary mt-4">Submit</button>
-                        <button type="reset", name="ButtonReset", id="ButtonReset"
-                            class="btn btn-outline-danger mt-4">Reset</button>
+                        <div class="mt-4 space-x-1">
+                            <x-primary-button>
+                                {{ __('Submit') }}
+                            </x-primary-button>
+                            <button type="reset", name="ButtonReset", id="ButtonReset"
+                                class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>

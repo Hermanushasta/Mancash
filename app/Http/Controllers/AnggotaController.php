@@ -23,13 +23,6 @@ class AnggotaController extends Controller
                 ->select(
                     'id as id',
                     'nama as nama',
-                    // DB::raw('
-                    //     (CASE
-                    //     WHEN jenisKoleksi="1" THEN "Buku"
-                    //     WHEN jenisKoleksi="2" THEN "Majalah"
-                    //     WHEN jenisKoleksi="3" THEN "Cakram Digital"
-                    //     END) AS jenis
-                    // '),
                     'nim as nim',
                     'alamat as alamat',
                     'no_telepon as no_telepon'
@@ -38,14 +31,15 @@ class AnggotaController extends Controller
                 ->get();
 
             return DataTables::of($members)
-                // ->addColumn(
-                //     'action',
-                //     function ($members) {
-                //         $html =
-                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
-                //         return $html;
-                //     }
-                // )
+                ->addColumn(
+                    'action',
+                    function ($members) {
+                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
+                        $html .= '<a href="' . ('/anggotaDelete') . "/" . $members->id . '">Hapus</a>';
+                        return $html;
+                    }
+                )
+                ->rawColumns(['action'])
                 ->make(true);
         }
 
@@ -80,7 +74,7 @@ class AnggotaController extends Controller
         );
         Anggota::create($validated);
         // Alert::success('Success Title', 'Success Message');
-        return redirect('anggota');
+        return redirect('anggota')->with('success', 'Data Berhasil dimasukkan');
     }
 
     /**
@@ -112,9 +106,16 @@ class AnggotaController extends Controller
      * @param  \App\Models\Anggota  $anggota
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Anggota $anggota)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'nama' => ['required', 'string', 'max:200'],
+            'nim' => ['required', 'string', 'max10'],
+            'alamat' => ['required', 'string', 'max:100'],
+            'no_telepon' => ['required', 'string', 'max:13'],
+        ]);
+        Anggota::find($id)->update($validated);
+        return redirect('/anggota');
     }
 
     /**
@@ -123,8 +124,9 @@ class AnggotaController extends Controller
      * @param  \App\Models\Anggota  $anggota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Anggota $anggota)
+    public function destroy(Anggota $id)
     {
-        //
+        $id->delete();
+        return redirect()->back();
     }
 }

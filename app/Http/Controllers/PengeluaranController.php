@@ -29,20 +29,21 @@ class PengeluaranController extends Controller
                     //     END) AS jenis
                     // '),
                     'jumlah as jumlah',
-                    'created_at as created_at'
+                    'created_at as created_at',
+                    'updated_at as updated_at'
                 )
                 ->orderBy('created_at', 'asc')
                 ->get();
 
             return DataTables::of($outcome)
-                // ->addColumn(
-                //     'action',
-                //     function ($members) {
-                //         $html =
-                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
-                //         return $html;
-                //     }
-                // )
+                ->addColumn(
+                    'action',
+                    function ($members) {
+                        $html =
+                            '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                        return $html;
+                    }
+                )
                 ->make(true);
         }
 
@@ -70,7 +71,7 @@ class PengeluaranController extends Controller
         $validated = $request->validate(
             [
                 'nama_pengeluaran' => ['required', 'string', 'max:200'],
-                'jumlah' => ['required', 'integer', 'max:11'],
+                'jumlah' => ['required', 'string', 'max:11'],
             ]
         );
         Pengeluaran::create($validated);

@@ -22,12 +22,16 @@
                             data: 'created_at',
                             name: 'created_at'
                         },
-                        // {
-                        //     data: 'action',
-                        //     name: 'action',
-                        //     orderable: false,
-                        //     searchable: false
-                        // }
+                        {
+                            data: 'updated_at',
+                            name: 'updated_at'
+                        },
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        }
                     ]
                 });
             });
@@ -52,6 +56,8 @@
                                 <th>Nama Pengeluaran</th>
                                 <th>Jumlah</th>
                                 <th>Tanggal Keluar</th>
+                                <th>Tanggal Update</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

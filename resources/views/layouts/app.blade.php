@@ -85,6 +85,7 @@
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
+
         }
 
         /*Pagination Buttons - Hover */
@@ -101,6 +102,7 @@
             /*bg-indigo-500*/
             border: 1px solid transparent;
             /*border border-transparent*/
+
         }
 
         /*Add padding to bottom border */
@@ -109,6 +111,9 @@
             /*border-b-1 border-gray-300*/
             margin-top: 0.75em;
             margin-bottom: 0.75em;
+            text-align: center;
+
+
         }
 
         /*Change colour of responsive icon*/

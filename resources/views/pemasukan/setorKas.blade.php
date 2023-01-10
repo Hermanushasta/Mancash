@@ -16,7 +16,7 @@
                             <br>
                             <div>
                                 <x-input-label for="nama" :value="__('Nama Anggota')" />
-                                <select name="nama" id="nama" class="form-select rounded-md" required>
+                                <select name="nama" id="nama" class="form-select rounded-md w-2/3" required>
                                     <option value="-1">Nama Anggota</option>
                                     @foreach ($users as $user)
                                         @if ($user->id == old('nama'))
@@ -30,20 +30,17 @@
                             </div>
                             <div class="mt-4">
                                 <x-input-label for="jumlah" :value="__('Jumlah Uang')" />
-                                <x-text-input id="jumlah" class="block mt-1 w-2/5" type="text" name="jumlah"
+                                <x-text-input id="jumlah" class="block mt-1 w-2/3" type="text" name="jumlah"
                                     :value="old('jumlah')" required autofocus />
                                 <x-input-error :messages="$errors->get('jumlah')" class="mt-2" />
                             </div>
-                            <div class="mt-4">
-                                <x-input-label for="tanggal_setor" :value="__('Tanggal Setor')" />
-                                <x-text-input id="tanggal_setor" class="block mt-1 w-2/5" type="date"
-                                    name="tanggal_setor" :value="old('tanggal_setor')" required autofocus />
-                                <x-input-error :messages="$errors->get('tanggal_setor')" class="mt-2" />
+                            <div class="mt-4 space-x-1">
+                                <x-primary-button>
+                                    {{ __('Submit') }}
+                                </x-primary-button>
+                                <button type="reset", name="ButtonReset", id="ButtonReset"
+                                    class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">Reset</button>
                             </div>
-                            <button type="submit", name="ButtonSubmit", id="ButtonSubmit"
-                                class="btn btn-outline-primary mt-4">Submit</button>
-                            <button type="reset", name="ButtonReset", id="ButtonReset"
-                                class="btn btn-outline-danger mt-4">Reset</button>
                         </form>
                     </div>
                 </div>

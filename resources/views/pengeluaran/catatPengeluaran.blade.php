@@ -14,10 +14,10 @@
                         <h1 class="font-extrabold ">Catat Pengeluaran : </h1>
                         <br>
                         <div class="mt-4">
-                            <x-input-label for="nim" :value="__('Nama Pengeluaran')" />
-                            <x-text-input id="nim" class="block mt-1 w-2/5" type="text" name="nim"
-                                :value="old('nim')" required autofocus />
-                            <x-input-error :messages="$errors->get('nim')" class="mt-2" />
+                            <x-input-label for="nama_pengeluaran" :value="__('Nama Pengeluaran')" />
+                            <x-text-input id="nama_pengeluaran" class="block mt-1 w-2/5" type="text"
+                                name="nama_pengeluaran" :value="old('nama_pengeluaran')" required autofocus />
+                            <x-input-error :messages="$errors->get('nama_pengeluaran')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="jumlah" :value="__('Jumlah Pengeluaran')" />
@@ -25,16 +25,13 @@
                                 :value="old('jumlah')" required autofocus />
                             <x-input-error :messages="$errors->get('jumlah')" class="mt-2" />
                         </div>
-                        <div class="mt-4">
-                            <x-input-label for="tanggal_keluar" :value="__('Tanggal Keluar')" />
-                            <x-text-input id="tanggal_keluar" class="block mt-1 w-2/5" type="date"
-                                name="tanggal_keluar" :value="old('tanggal_keluar')" required autofocus />
-                            <x-input-error :messages="$errors->get('tanggal_keluar')" class="mt-2" />
+                        <div class="mt-4 space-x-1">
+                            <x-primary-button>
+                                {{ __('Submit') }}
+                            </x-primary-button>
+                            <button type="reset", name="ButtonReset", id="ButtonReset"
+                                class="inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">Reset</button>
                         </div>
-                        <button type="submit", name="ButtonSubmit", id="ButtonSubmit"
-                            class="btn btn-outline-primary mt-4">Submit</button>
-                        <button type="reset", name="ButtonReset", id="ButtonReset"
-                            class="btn btn-outline-danger mt-4">Reset</button>
                     </form>
                 </div>
             </div>

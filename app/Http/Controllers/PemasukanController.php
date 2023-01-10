@@ -37,14 +37,15 @@ class PemasukanController extends Controller
                 ->get();
 
             return DataTables::of($incomes)
-                // ->addColumn(
-                //     'action',
-                //     function ($members) {
-                //         $html =
-                //             '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
-                //         return $html;
-                //     }
-                // )
+                ->addColumn(
+                    'action',
+                    function ($members) {
+                        $html =
+                            '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit</a>';
+                        '<a href="' . ('pemasukanDelete') . "/" . $members->id . '">Edit</a>';
+                        return $html;
+                    }
+                )
                 ->make(true);
         }
 
@@ -73,9 +74,9 @@ class PemasukanController extends Controller
     {
         $validated = $request->validate(
             [
-                'nama' => ['required', 'string', 'max:200'],
+
+                'nama' => ['required'],
                 'jumlah' => ['required', 'string', 'max:12'],
-                'created_at' => ['required', 'date']
             ]
         );
         Pemasukan::create($validated);

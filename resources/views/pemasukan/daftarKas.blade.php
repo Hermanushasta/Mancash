@@ -22,12 +22,12 @@
                             data: 'created_at',
                             name: 'created_at'
                         },
-                        // {
-                        //     data: 'action',
-                        //     name: 'action',
-                        //     orderable: false,
-                        //     searchable: false
-                        // }
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        }
                     ]
                 });
             });
@@ -52,6 +52,7 @@
                                 <th>Nama Lengkap</th>
                                 <th>Jumlah</th>
                                 <th>Tanggal Setor</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
