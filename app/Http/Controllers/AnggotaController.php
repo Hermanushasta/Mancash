@@ -35,8 +35,8 @@ class AnggotaController extends Controller
                 ->addColumn(
                     'action',
                     function ($members) {
-                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
-                        $html .= '<a href="' . ('/anggotaDelete') . "/" . $members->id . '">Hapus</a>';
+                        $html = '<a class="bg-green-700 p-2 text-white rounded-md m-4" href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
+                        $html .= '<a class="bg-red-600 p-2 text-white rounded-md m-4" href="' . ('/anggotaDelete') . "/" . $members->id . '">Hapus</a>';
                         return $html;
                     }
                 )
@@ -86,7 +86,7 @@ class AnggotaController extends Controller
      */
     public function show(Anggota $anggota)
     {
-        return view('anggota.daftarAnggota', compact('anggota'));
+        return view('anggota.editAnggota', compact('anggota'));
     }
 
     /**
@@ -110,13 +110,13 @@ class AnggotaController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nama' => ['required', 'string', 'max:200'],
-            'nim' => ['required', 'string', 'max10'],
-            'alamat' => ['required', 'string', 'max:100'],
-            'no_telepon' => ['required', 'string', 'max:13'],
+            'nama' => ['required', 'string'],
+            'nim' => ['required', 'string'],
+            'alamat' => ['required', 'string'],
+            'no_telepon' => ['required', 'string'],
         ]);
         Anggota::find($id)->update($validated);
-        return redirect('/anggota');
+        return redirect('/anggota')->with('success', 'Data berhasil diupdate');
     }
 
     /**

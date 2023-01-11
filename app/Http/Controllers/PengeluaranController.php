@@ -31,9 +31,9 @@ class PengeluaranController extends Controller
             return DataTables::of($outcome)
                 ->addColumn(
                     'action',
-                    function ($members) {
-                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
-                        $html .= '<a href="' . ('/pengeluaranDelete') . "/" . $members->id . '"> Hapus</a>';
+                    function ($outcome) {
+                        $html = '<a class="bg-green-700 p-2 text-white rounded-md m-4" href="' . ('pengeluaranView') . "/" . $outcome->id . '">Edit </a>';
+                        $html .= '<a class="bg-red-600 p-2 text-white rounded-md m-4" href="' . ('/pengeluaranDelete') . "/" . $outcome->id . '">Hapus</a>';
                         return $html;
                     }
                 )
@@ -65,7 +65,7 @@ class PengeluaranController extends Controller
         $validated = $request->validate(
             [
                 'nama_pengeluaran' => ['required', 'string', 'max:200'],
-                'jumlah' => ['required', 'string', 'max:11'],
+                'jumlah' => ['required', 'integer'],
             ]
         );
         Pengeluaran::create($validated);
@@ -80,7 +80,7 @@ class PengeluaranController extends Controller
      */
     public function show(Pengeluaran $pengeluaran)
     {
-        return view('pengeluaran.daftarPengeluaran', compact('pengeluaran'));
+        return view('pengeluaran.editPengeluaran', compact('pengeluaran'));
     }
 
     /**
@@ -91,7 +91,6 @@ class PengeluaranController extends Controller
      */
     public function edit(Pengeluaran $pengeluaran)
     {
-        //
     }
 
     /**
@@ -101,9 +100,16 @@ class PengeluaranController extends Controller
      * @param  \App\Models\Pengeluaran  $pengeluaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pengeluaran $pengeluaran)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate(
+            [
+                'nama_pengeluaran' => ['required', 'string', 'max:200'],
+                'jumlah' => ['required', 'integer'],
+            ]
+        );
+        Pengeluaran::find($id)->update($validated);
+        return redirect('/pengeluaran')->with('success', 'Data Berhasil diupdate');
     }
 
     /**

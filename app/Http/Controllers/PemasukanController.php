@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pemasukan;
 use App\Models\Anggota;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
@@ -33,9 +34,9 @@ class PemasukanController extends Controller
             return DataTables::of($incomes)
                 ->addColumn(
                     'action',
-                    function ($members) {
-                        $html = '<a href="' . ('anggotaView') . "/" . $members->id . '">Edit </a>';
-                        $html .= '<a href="' . ('/pemasukanDelete') . "/" . $members->id . '">Hapus</a>';
+                    function ($incomes) {
+                        $html = '<a class="bg-green-700 p-2 text-white rounded-md m-4" href="' . ('pemasukanView') . "/" . $incomes->id . '">Edit </a>';
+                        $html .= '<a class="bg-red-600 p-2 text-white rounded-md m-4" href="' . ('/pemasukanDelete') . "/" . $incomes->id . '">Hapus</a>';
                         return $html;
                     }
                 )
@@ -70,7 +71,7 @@ class PemasukanController extends Controller
             [
 
                 'nama' => ['required'],
-                'jumlah' => ['required', 'string', 'max:12'],
+                'jumlah' => ['required', 'integer'],
             ]
         );
         Pemasukan::create($validated);
@@ -85,7 +86,8 @@ class PemasukanController extends Controller
      */
     public function show(Pemasukan $pemasukan)
     {
-        return view('pemasukan.daftarKas', compact('pemasukan'));
+        $users = Anggota::get();
+        return view('pemasukan.editPemasukan', compact('pemasukan', 'users'));
     }
 
     /**
@@ -106,9 +108,16 @@ class PemasukanController extends Controller
      * @param  \App\Models\Pemasukan  $pemasukan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pemasukan $pemasukan)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate(
+            [
+                'nama' => ['required'],
+                'jumlah' => ['required', 'integer'],
+            ]
+        );
+        Pemasukan::find($id)->update($validated);
+        return redirect('/pemasukan')->with('success', 'Data berhasil diupdate');
     }
 
     /**

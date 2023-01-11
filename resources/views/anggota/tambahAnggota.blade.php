@@ -15,25 +15,25 @@
                         <br>
                         <div>
                             <x-input-label for="nama" :value="__('Nama Anggota')" />
-                            <x-text-input id="nama" class="block mt-1 w-2/5" type="text" name="nama"
+                            <x-text-input id="nama" class="block mt-1 w-2/3 " type="text" name="nama"
                                 :value="old('nama')" required autofocus />
                             <x-input-error :messages="$errors->get('nama')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="nim" :value="__('NIM')" />
-                            <x-text-input id="nim" class="block mt-1 w-2/5" type="text" name="nim"
+                            <x-text-input id="nim" class="block mt-1 w-2/3  " type="text" name="nim"
                                 :value="old('nim')" required autofocus />
                             <x-input-error :messages="$errors->get('nim')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="alamat" :value="__('Alamat')" />
-                            <x-text-input id="alamat" class="block mt-1 w-2/5" type="text" name="alamat"
+                            <x-text-input id="alamat" class="block mt-1 w-2/3   " type="text" name="alamat"
                                 :value="old('alamat')" required autofocus />
                             <x-input-error :messages="$errors->get('alamat')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="no_telepon" :value="__('No Telepon')" />
-                            <x-text-input id="no_telepon" class="block mt-1 w-2/5" type="text" name="no_telepon"
+                            <x-text-input id="no_telepon" class="block mt-1 w-2/3   " type="text" name="no_telepon"
                                 :value="old('no_telepon')" required autofocus />
                             <x-input-error :messages="$errors->get('no_telepon')" class="mt-2" />
                         </div>

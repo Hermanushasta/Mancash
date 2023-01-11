@@ -84,7 +84,7 @@
             </span>
             <span class="ml-2">Tambah Anggota</span>
         </x-btnactive>
-        <x-btnactive :href="route('anggotaView')" :active="request()->routeIs('anggotaView')">
+        <x-btnactive :href="route('anggota')" :active="request()->routeIs('anggota')">
             <span class="flex items-center justify-center text-lg text-black-400">
                 <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                     stroke="currentColor" class="h-6 w-6">
@@ -103,9 +103,10 @@
         </ul>
         <x-btnactive :href="route('tambahPemasukan')" :active="request()->routeIs('tambahPemasukan')">
             <span class="flex items-center justify-center text-lg text-black-400">
-                <svg fill="#000000" height="24px" width="24px" version="1.1" id="Layer_1"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"
-                    enable-background="new 0 0 64 64" xml:space="preserve">
+                <svg fill="#ffff" stroke="currentColor" stroke-linecap="round" stroke-width="2" height="24px"
+                    width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                    xml:space="preserve">
                     <g id="Profit">
                         <path
                             d="M32.8869896,19.6364498c0-0.4902992-0.3974991-0.8876991-0.8876991-0.8876991s-0.8876991,0.3973999-0.8876991,0.8876991
@@ -154,34 +155,68 @@
             </span>
             <span class="ml-3">Setor Kas</span>
         </x-btnactive>
-        <x-btnactive :href="route('pemasukanView')" :active="request()->routeIs('pemasukanView')">
-            <span class="flex items-center justify-center text-lg text-black-400">
-                <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                    stroke="currentColor" class="h-6 w-6">
+        <x-btnactive :href="route('pemasukan')" :active="request()->routeIs('pemasukan')">
+            <span class="flex items-center justify-center text-lg text-black-400" stroke-linecap="round"
+                stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffff"
+                    stroke-width="2">
                     <path
-                        d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                        d="M0 8v-2c0-1.104.896-2 2-2h18c1.104 0 2 .896 2 2v2h-22zm24 7.5c0 2.485-2.015 4.5-4.5 4.5s-4.5-2.015-4.5-4.5 2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5zm-2.156-.882l-.696-.696-2.116 2.169-.991-.94-.696.697 1.688 1.637 2.811-2.867zm-8.844.882c0 1.747.696 3.331 1.82 4.5h-12.82c-1.104 0-2-.896-2-2v-7h14.82c-1.124 1.169-1.82 2.753-1.82 4.5zm-5 .5h-5v1h5v-1zm3-2h-8v1h8v-1z" />
                 </svg>
             </span>
             <span class="ml-3">Daftar Kas</span>
         </x-btnactive>
         <x-btnactive :href="route('tambahPengeluaran')" :active="request()->routeIs('tambahPengeluaran')">
-            <span class="flex items-center justify-center text-lg text-black-400">
-                <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                    stroke="currentColor" class="h-6 w-6">
+            <span class="flex items-center justify-center text-lg text-black-400" stroke="currentColor"
+                stroke-linecap="round">
+                <svg width="24px" height="24px" viewBox="0 0 120 120" fill="#ffff" stroke="currentColor"
+                    stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 64 64"
+                    enable-background="new 0 0 64 64" xml:space="preserve">
                     <path
-                        d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                        d="M52.1333 56.7064C49.3719 56.7064 47.1333 54.4679 47.1333 51.7064V39.3022C47.1333 37.9424 46 37.7064 45 37.7064C42 37.7064 40.4231 33.6136 42.4773 31.1575L56.1646 14.7922C58.1632 12.4026 61.8368 12.4026 63.8354 14.7922L77.5227 31.1575C79.5769 33.6136 78 37.7064 75 37.7064C74 37.7064 72.8667 37.9824 72.8667 39.3022V51.7064C72.8667 54.4679 70.6281 56.7064 67.8667 56.7064H52.1333Z"
+                        fill="white" />
+                    <path
+                        d="M54.1219 72H58V78.5H54.1219C52.9748 78.5 52.2526 78.0808 51.7915 77.549C51.2953 76.9769 51 76.1495 51 75.25C51 74.3505 51.2953 73.5231 51.7915 72.951C52.2526 72.4192 52.9748 72 54.1219 72Z"
+                        fill="black" />
+                    <path
+                        d="M62 89V82.5H65.878C67.0252 82.5 67.7474 82.9192 68.2085 83.451C68.7047 84.0231 69 84.8505 69 85.75C69 86.6495 68.7047 87.4769 68.2085 88.049C67.7474 88.5808 67.0252 89 65.878 89H62Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M110 92.7326V66.6788C102.026 66.236 95.9953 60.5105 95.1118 52.7064H76.8117C76.3143 57.2064 72.4992 60.7064 67.8667 60.7064H52.1333C47.5008 60.7064 43.6857 57.2064 43.1883 52.7064H24.8882C24.0047 60.5105 17.974 66.236 10 66.6788V92.7326C18.174 93.1617 24.4754 98.8384 24.9688 106.706H95.0312C95.5246 98.8384 101.826 93.1617 110 92.7326ZM60 64C61.1046 64 62 64.8954 62 66V68H68.8049C69.9094 68 70.8049 68.8954 70.8049 70C70.8049 71.1046 69.9094 72 68.8049 72H62V78.5H65.878C68.1456 78.5 69.9843 79.3933 71.2305 80.8303C72.4416 82.2269 73 84.0245 73 85.75C73 87.4755 72.4416 89.2731 71.2305 90.6697C69.9843 92.1067 68.1456 93 65.878 93H62V95C62 96.1046 61.1046 97 60 97C58.8954 97 58 96.1046 58 95V93H50.474C49.3694 93 48.474 92.1046 48.474 91C48.474 89.8954 49.3694 89 50.474 89H58V82.5H54.1219C51.8544 82.5 50.0157 81.6067 48.7695 80.1697C47.5584 78.7731 47 76.9755 47 75.25C47 73.5245 47.5584 71.7269 48.7695 70.3303C50.0157 68.8933 51.8544 68 54.1219 68H58V66C58 64.8954 58.8954 64 60 64Z"
+                        fill="white" />
+                    <path
+                        d="M99.043 106.706H105C107.761 106.706 110 104.468 110 101.706V96.7388C103.834 97.1418 99.5152 101.267 99.043 106.706Z"
+                        fill="white" />
+                    <path
+                        d="M20.957 106.706C20.4848 101.267 16.1655 97.1418 10 96.7388V101.706C10 104.468 12.2386 106.706 15 106.706H20.957Z"
+                        fill="white" />
+                    <path
+                        d="M10 62.6708C15.7508 62.2567 20.0275 58.2768 20.8545 52.7064H15C12.2386 52.7064 10 54.945 10 57.7064V62.6708Z"
+                        fill="white" />
+                    <path
+                        d="M99.1455 52.7064C99.9725 58.2768 104.249 62.2567 110 62.6708V57.7064C110 54.945 107.761 52.7064 105 52.7064H99.1455Z"
+                        fill="white" />
                 </svg>
             </span>
             <span class="ml-3">Catat Keluar</span>
         </x-btnactive>
-        <x-btnactive :href="route('pengeluaranView')" :active="request()->routeIs('pengeluaranView')">
-            <span class="flex items-center justify-center text-lg text-black-400">
-                <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                    <path
-                        d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
-                </svg>
-            </span>
+        <x-btnactive :href="route('pengeluaran')" :active="request()->routeIs('pengeluaran')">
+            <svg stroke-width="2" width="24px" height="24px" viewBox="0 0 32 32" version="1.1"
+                stroke="currentColor" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+                <title>icon 86 document list</title>
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="2" fill="" fill-rule="evenodd "
+                    sketch:type="MSPage">#000
+                    <g id="icon-86-document-list" sketch:type="MSArtboardGroup" fill="#ffff ">
+                        <path
+                            d="M19.5,3 L9.00276013,3 C7.89666625,3 7,3.89833832 7,5.00732994 L7,27.9926701 C7,29.1012878 7.89092539,30 8.99742191,30 L24.0025781,30 C25.1057238,30 26,29.1017876 26,28.0092049 L26,10.5 L26,10 L20,3 L19.5,3 L19.5,3 L19.5,3 Z M19,4 L8.9955775,4 C8.44573523,4 8,4.45526288 8,4.99545703 L8,28.004543 C8,28.5543187 8.45470893,29 8.9999602,29 L24.0000398,29 C24.5523026,29 25,28.5550537 25,28.0066023 L25,11 L20.9979131,11 C19.8944962,11 19,10.1134452 19,8.99408095 L19,4 L19,4 Z M20,4.5 L20,8.99121523 C20,9.54835167 20.4506511,10 20.9967388,10 L24.6999512,10 L20,4.5 L20,4.5 Z M15,14 L15,15 L23,15 L23,14 L15,14 L15,14 Z M10,13 L10,16 L13,16 L13,13 L10,13 L10,13 Z M11,14 L11,15 L12,15 L12,14 L11,14 L11,14 Z M10,18 L10,21 L13,21 L13,18 L10,18 L10,18 Z M11,19 L11,20 L12,20 L12,19 L11,19 L11,19 Z M15,19 L15,20 L23,20 L23,19 L15,19 L15,19 Z M10,23 L10,26 L13,26 L13,23 L10,23 L10,23 Z M11,24 L11,25 L12,25 L12,24 L11,24 L11,24 Z M15,24 L15,25 L23,25 L23,24 L15,24 L15,24 Z"
+                            id="document-list" sketch:type="MSShapeGroup"></path>
+                    </g>
+                </g>
+            </svg>
             <span class="ml-3">Daftar Keluar</span>
         </x-btnactive>
     </div>

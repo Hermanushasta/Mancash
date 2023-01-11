@@ -9,36 +9,26 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form method="POST" action="{{ url('anggotaUpdate', $anggota->id) }}">
+                    <form method="POST" action="{{ url('pengeluaranUpdate', $pengeluaran->id) }}">
                         @csrf
-                        <h1 class="font-extrabold ">Edit Anggota : </h1>
+                        <h1 class="font-extrabold ">Edit Pengeluaran : </h1>
                         <br>
                         <div>
                             <x-input-label for="id" :value="__('Id Anggota')" />
                             <x-text-input id="id" class="block mt-1 w-2/5" type="text" name="id"
-                                value="{{ $anggota->id }}" readonly />
+                                value="{{ $pengeluaran->id }}" readonly />
                         </div>
                         <div>
-                            <x-input-label for="nama" :value="__('Nama Anggota')" />
-                            <x-text-input id="nama" class="block mt-1 w-2/5" type="text" name="nama"
-                                value="{{ $anggota->nama }}" required autofocus />
+                            <x-input-label for="nama_pengeluaran" :value="__('Nama Pengeluaran')" />
+                            <x-text-input id="nama_pengeluaran" class="block mt-1 w-2/5" type="text"
+                                name="nama_pengeluaran" value="{{ $pengeluaran->nama_pengeluaran }}" required
+                                autofocus />
                         </div>
                         <div>
-                            <x-input-label for="nim" :value="__('NIM')" />
-                            <x-text-input id="nim" class="block mt-1 w-2/5" type="text" name="nim"
-                                value="{{ $anggota->nim }}" required autofocus />
+                            <x-input-label for="jumlah" :value="__('Jumlah')" />
+                            <x-text-input id="jumlah" class="block mt-1 w-2/5" type="text" name="jumlah"
+                                value="{{ $pengeluaran->jumlah }}" required autofocus />
                         </div>
-                        <div>
-                            <x-input-label for="alamat" :value="__('Alamat')" />
-                            <x-text-input id="alamat" class="block mt-1 w-2/5" type="text" name="alamat"
-                                value="{{ $anggota->alamat }}" required autofocus />
-                        </div>
-                        <div>
-                            <x-input-label for="no_telepon" :value="__('Nomor Telepon')" />
-                            <x-text-input id="no_telepon" class="block mt-1 w-2/5" type="text" name="no_telepon"
-                                value="{{ $anggota->no_telepon }}" required autofocus />
-                        </div>
-
                         <div class="mt-4 space-x-1">
                             <x-primary-button>
                                 {{ __('Submit') }}

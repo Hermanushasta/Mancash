@@ -15,13 +15,13 @@
                         <br>
                         <div class="mt-4">
                             <x-input-label for="nama_pengeluaran" :value="__('Nama Pengeluaran')" />
-                            <x-text-input id="nama_pengeluaran" class="block mt-1 w-2/5" type="text"
+                            <x-text-input id="nama_pengeluaran" class="block mt-1 w-2/3" type="text"
                                 name="nama_pengeluaran" :value="old('nama_pengeluaran')" required autofocus />
                             <x-input-error :messages="$errors->get('nama_pengeluaran')" class="mt-2" />
                         </div>
                         <div class="mt-4">
                             <x-input-label for="jumlah" :value="__('Jumlah Pengeluaran')" />
-                            <x-text-input id="jumlah" class="block mt-1 w-2/5" type="text" name="jumlah"
+                            <x-text-input id="jumlah" class="block mt-1 w-2/3" type="text" name="jumlah"
                                 :value="old('jumlah')" required autofocus />
                             <x-input-error :messages="$errors->get('jumlah')" class="mt-2" />
                         </div>
