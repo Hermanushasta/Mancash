@@ -71,7 +71,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Pengeluaran</th>
-                                <th>Jumlah</th>
+                                <th>Jumlah Harga</th>
                                 <th>Tanggal Keluar</th>
                                 <th>Tanggal Update</th>
                                 <th>Aksi</th>
